@@ -54,7 +54,7 @@ router.post('/', [ // exress-validator check
             user:{
                 id: user.id
             }
-        }
+        };
         jwt.sign(payload,
             config.get('jwtSecret'),
             {expiresIn: 360000},
