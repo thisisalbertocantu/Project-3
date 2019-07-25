@@ -1,21 +1,24 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, {Fragment} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
+import Landing from './components/layout/Landing';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
+import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+    <Router>
+        <Fragment>
+            <Navbar/>
+            <Route exact path='/' component={Landing}/>
+            <section className="container">
+              <Switch>
+                  <Route exact path='/register' component={Register}/>
+                  <Route exact path='/login' component={Login}/>
+              </Switch>
+            </section>
+        </Fragment>
+    </Router>
+);
 
 export default App;
