@@ -5,7 +5,8 @@ import {
     DELETE_POST,
     GET_POSTS,
     POST_ERROR,
-    UPDATE_LIKES
+    UPDATE_LIKES,
+    GET_POST
 } from "./types";
 
 // Get posts
@@ -73,7 +74,6 @@ export const deletePost = id => async dispatch => {
     }
 };
 
-
 // Add post
 export const addPost = formData => async dispatch => {
     const config = {
@@ -88,6 +88,22 @@ export const addPost = formData => async dispatch => {
             payload: res.data
         });
         dispatch(setAlert('Post Created', 'success'))
+    }catch (e) {
+        dispatch({
+            type: POST_ERROR,
+            payload: {msg: e.response.statusText, status: e.response.status}
+        });
+    }
+};
+
+// Get post
+export const getPost = id => async dispatch => {
+    try {
+        const res  = await axios.get(`/api/posts/${id}`);
+        dispatch({
+            type: GET_POST,
+            payload: res.data
+        });
     }catch (e) {
         dispatch({
             type: POST_ERROR,
