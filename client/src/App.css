@@ -575,3 +575,78 @@ button {
     padding: 0.3rem 0.4rem;
   }
 }
+
+
+
+/* FAQ Buffer styles */
+.category-list {
+  text-align: left;
+  margin: 1em auto
+}
+
+.category-list .category {
+  text-align: center;
+  display: inline-block;
+  width: 29%;
+  border: 1px solid #e0e0e0;
+  margin: 0 .8% 20px;
+  padding: 1.5em 1em;
+  cursor: pointer;
+  -webkit-transition: background .15s;
+  -moz-transition: background .15s;
+  -o-transition: background .15s;
+  transition: background .15s;
+  vertical-align: top
+}
+
+.category-list .category p {
+  color: #b3b3b3
+}
+
+.category-list .category .article-count {
+  color: #4381b5;
+  margin-top: 15px
+}
+
+.category-list .category:hover {
+  text-decoration: none;
+  background: #f8f8f8
+}
+
+.category-list .category:hover .article-count {
+  color: #4381b5
+}
+
+.category-list h3 {
+  color: #333;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3em
+}
+
+.category-list p {
+  font-size: 14px
+}
+
+.category-list.two-col .category {
+  width: 45.65%
+}
+
+.collection-category .category-list {
+  margin: 0 0 4em
+}
+
+.collection-category h2 {
+  font-weight: 400;
+  margin: 0 0 20px;
+  padding-left: .65%
+}
+
+.collection-category h2 a {
+  color: #363636
+}
+
+.collection-category h2 a:hover {
+  text-decoration: none;
+  border-bottom: 1px dotted #b3b3b3
+}

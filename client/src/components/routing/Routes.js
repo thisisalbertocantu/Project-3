@@ -13,6 +13,7 @@ import AddExperience from "../profile-forms/AddExperience";
 import AddEducation from "../profile-forms/AddEducation";
 import Posts from "../posts/Posts";
 import Post from "../post/Post";
+import Home from "../main/Home";
 import NotFound from "../layout/NotFound";
 
 const Routes = () => {
@@ -24,6 +25,7 @@ const Routes = () => {
                 <Route exact path='/login' component={Login}/>
                 <Route exact path='/profiles' component={Profiles}/>
                 <Route exact path='/profile/:id' component={Profile}/>
+                <Route exact path='/home' component={Home}/>
                 <PrivateRoute exact path='/dashboard' component={Dashboard}/>
                 <PrivateRoute exact path='/create-profile' component={CreateProfile}/>
                 <PrivateRoute exact path='/edit-profile' component={EditProfile}/>
