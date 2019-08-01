@@ -8,13 +8,24 @@ The front-end React app will auto-reload as it's updated via webpack dev server,
 
 ## Starting the app locally
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+Start by installing front end dependencies. Go to the project level folder and while in this directory, run the following command:
 
 ```
 npm install
 ```
 
-This should install node modules within the server and the client folder.
+This should install node modules within the server folder
+
+
+Now we need to install the back end  dependencies. Go to the client level folder and while in this directory, run the following command:
+
+```
+npm install
+```
+
+This should install node modules within the client folder.
+
+
 
 After both installations complete, run the following command in your terminal:
 
@@ -28,4 +39,3 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 
 To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
 
-This is a test to modify the read me to protect the branches
