@@ -1,50 +1,49 @@
 import {
-    DELETE_POST,
-    GET_POSTS,
-    POST_ERROR,
+    GET_FAQS,
+    GET_FAQ,
+    ADD_FAQ,
+    DELETE_FAQ,
+    FAQ_ERROR,
     UPDATE_LIKES,
-    ADD_POST,
-    GET_POST,
     ADD_COMMENT,
     REMOVE_COMMENT
-} from '../actions/types';
-
+} from "../actions/types";
 
 const initialState = {
-    posts: [],
-    post: null,
+    faqs: [],
+    faq: null,
     loading: true,
     error: {}
 };
 
-export default function (state = initialState, action) {
+export default function (state = initialState, action){
     const {type, payload} = action;
     switch (type) {
-        case GET_POSTS:
+        case GET_FAQS:
             return {
                 ...state,
-                posts: payload,
+                faqs: payload,
                 loading: false
             };
-        case GET_POST:
+        case GET_FAQ:
             return {
                 ...state,
                 post: payload,
                 loading: false
             };
-        case ADD_POST:
-            return{
-                ...state,
-                posts: [payload, ...state.posts],
-                loading: false
-            };
-        case DELETE_POST:
+        case ADD_FAQ:
             return {
                 ...state,
-                posts: state.posts.filter(post => post._id !== payload),
+                faqs: [payload, ...state.faqs],
                 loading: false
             };
-        case POST_ERROR:
+        case DELETE_FAQ:
+            return {
+                ...state,
+                faqs: state.faqs.filter(faq => faq._id !== payload),
+                loading: false
+            };
+        case FAQ_ERROR:
             return {
                 ...state,
                 error: payload,
@@ -53,25 +52,26 @@ export default function (state = initialState, action) {
         case UPDATE_LIKES:
             return {
                 ...state,
-                posts: state.posts.map(post => post._id === payload.id ?
-                    {...post, likes: payload.likes}
-                    : post),
+                faqs: state.faqs.map(faq => faq._id === payload ?
+                    {...faq, likes: payload.likes}
+                    : faq),
                 loading: false
             };
         case ADD_COMMENT:
             return {
                 ...state,
-                post: {...state.post, comments: payload},
+                faq: {...state.faq, comments: payload},
                 loading: false
             };
         case REMOVE_COMMENT:
             return {
                 ...state,
-                post: {...state.post,
-                    comments: state.post.comments.filter(comment => comment._id !== payload)
+                faq: {...state.faq,
+                comment: state.faq.comment.filter(comment => command._id !== payload)
                 },
                 loading: false
             };
+
         default: return state;
     }
 };

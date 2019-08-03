@@ -9,6 +9,7 @@ var usersRoute = require('./routes/api/users');
 var authRoute = require('./routes/api/auth');
 var profileRoute = require('./routes/api/profile');
 var postsRoute = require('./routes/api/posts');
+var faqRoute = require('./routes/api/faq');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,6 +27,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/users', usersRoute);
 app.use('/api/profile', profileRoute);
 app.use('/api/posts', postsRoute);
+app.use('/api/faq', faqRoute);
 
 // Start listening on port
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
