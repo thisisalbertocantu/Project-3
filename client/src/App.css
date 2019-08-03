@@ -67,7 +67,7 @@ img {
 }
 
 .text-primary {
-  color: var(--primary-color);
+  color:  rgba(4, 4, 126, 0.555);
 }
 
 .text-dark {
@@ -160,7 +160,7 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--primary-color);
+  background: rgba(4, 4, 126, 0.555);
   color: #fff;
 }
 
@@ -658,4 +658,13 @@ button {
     display: block;
     width: 90%;
   }
+}
+
+/*Name of App */
+
+#appName {
+  font-family: 'Rubik', sans-serif;
+}
+li, h1, h2, p, a, h3, h4, h5 {
+  font-family: 'Rubik', sans-serif;
 }
