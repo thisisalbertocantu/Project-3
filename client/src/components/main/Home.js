@@ -62,6 +62,26 @@ const Home = props => {
                   </p>
               </a>
 
+              <a className="category" id="category-802" href="/category/802-settings">
+                  <h3>Preferences</h3>
+                  <p></p>
+                  <p className="article-count">
+
+                      <span className="notranslate">11</span> articles
+
+                  </p>
+              </a>
+
+              <a className="category" id="category-802" href="/category/802-settings">
+                  <h3>Preferences</h3>
+                  <p></p>
+                  <p className="article-count">
+
+                      <span className="notranslate">11</span> articles
+
+                  </p>
+              </a>
+
 
               <a className="category" id="category-696" href="/category/696-reports">
                   <h3>Reports</h3>

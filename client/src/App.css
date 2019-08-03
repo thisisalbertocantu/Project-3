@@ -580,7 +580,7 @@ button {
 
 /* FAQ Buffer styles */
 .category-list {
-  text-align: left;
+  text-align: center;
   margin: 1em auto
 }
 
@@ -596,7 +596,7 @@ button {
   -moz-transition: background .15s;
   -o-transition: background .15s;
   transition: background .15s;
-  vertical-align: top
+  vertical-align: bottom;
 }
 
 .category-list .category p {
@@ -649,4 +649,13 @@ button {
 .collection-category h2 a:hover {
   text-decoration: none;
   border-bottom: 1px dotted #b3b3b3
+}
+
+@media (max-width: 700px) {
+ 
+  .category-list .category {
+    
+    display: block;
+    width: 90%;
+  }
 }
