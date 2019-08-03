@@ -27,7 +27,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/users', usersRoute);
 app.use('/api/profile', profileRoute);
 app.use('/api/posts', postsRoute);
-app.use('/api/faq', faqRoute);
+app.use('/api/faqs', faqRoute);
 
 // Start listening on port
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
