@@ -1,5 +1,6 @@
 import React, {Fragment, useEffect} from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 import Spinner from '../layout/Spinner';
 import PostItem from './PostItem';
@@ -17,6 +18,9 @@ const Posts = ({getPosts, post: {posts, loading}}) => {
             <i className="fas fa-user"></i> Welcome to the community
         </p>
         <PostForm/>
+        <Link  to='/faq-form' className="btn btn-light">
+            Add FAQ
+        </Link>
         <div className="posts">
             {posts.map(post => (
                 <PostItem key={post._id} post={post}/>

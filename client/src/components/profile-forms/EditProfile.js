@@ -174,7 +174,6 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
             </form>
         </Fragment>
     )
-
 };
 
 EditProfile.protoTypes = {

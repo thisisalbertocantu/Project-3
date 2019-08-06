@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {setAlert} from '.alert';
+import {setAlert} from './alert';
 import {
     GET_FAQ,
     GET_FAQS,
@@ -7,7 +7,7 @@ import {
     ADD_COMMENT,
     REMOVE_COMMENT,
     ADD_FAQ,
-    DELETE_FAQ, UPDATE_LIKES, POST_ERROR
+    DELETE_FAQ, UPDATE_LIKES
 } from "./types";
 
 // Get faqs
