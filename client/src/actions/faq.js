@@ -50,7 +50,7 @@ export const addFaq = formData => async dispatch => {
         }
     };
     try {
-        const res = await axios.post(`/api/posts`, formData, config);
+        const res = await axios.post(`/api/faqs`, formData, config);
         dispatch({
             type: ADD_FAQ,
             payload: res.data
@@ -123,6 +123,7 @@ export const deleteComment = (faqId, commentId) => async dispatch => {
 // Add like
 export const addLike = id => async dispatch => {
     try {
+        console.log('addlike')
         const res  = await axios.put(`/api/faqs/like/${id}`);
         dispatch({
             type: UPDATE_LIKES,

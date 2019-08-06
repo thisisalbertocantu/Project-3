@@ -52,7 +52,7 @@ export default function (state = initialState, action){
         case UPDATE_LIKES:
             return {
                 ...state,
-                faqs: state.faqs.map(faq => faq._id === payload ?
+                faqs: state.faqs.map(faq => faq._id === payload.id ?
                     {...faq, likes: payload.likes}
                     : faq),
                 loading: false
@@ -67,7 +67,7 @@ export default function (state = initialState, action){
             return {
                 ...state,
                 faq: {...state.faq,
-                comment: state.faq.comment.filter(comment => command._id !== payload)
+                comment: state.faq.comment.filter(comment => comment._id !== payload)
                 },
                 loading: false
             };
