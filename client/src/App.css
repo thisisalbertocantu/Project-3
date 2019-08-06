@@ -67,7 +67,7 @@ img {
 }
 
 .text-primary {
-  color:  rgba(4, 4, 126, 0.555);
+  color:  var(--primary-color);
 }
 
 .text-dark {
@@ -160,7 +160,7 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: rgba(4, 4, 126, 0.555);
+  background: var(--primary-color);
   color: #fff;
 }
 
