@@ -13,6 +13,7 @@ import AddExperience from "../profile-forms/AddExperience";
 import AddEducation from "../profile-forms/AddEducation";
 import Posts from "../posts/Posts";
 import Post from "../post/Post";
+import FaqForm from "../faqs/FaqForm";
 import Home from "../main/Home";
 import NotFound from "../layout/NotFound";
 
@@ -33,6 +34,7 @@ const Routes = () => {
                 <PrivateRoute exact path='/add-education' component={AddEducation}/>
                 <PrivateRoute exact path='/posts' component={Posts}/>
                 <PrivateRoute exact path='/posts/:id' component={Post}/>
+                <PrivateRoute exact path='/faq-form' component={FaqForm}/>
                 <Route component={NotFound}/>
             </Switch>
         </section>
