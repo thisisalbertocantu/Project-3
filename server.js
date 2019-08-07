@@ -30,7 +30,7 @@ app.use('/api/posts', postsRoute);
 app.use('/api/faqs', faqRoute);
 
 // Serve static assets in production
-if (procces.env.NODE_ENV ==='production'){
+if (process.env.NODE_ENV ==='production'){
     // Set static folder
     app.use(express.static('client/build'));
 }
