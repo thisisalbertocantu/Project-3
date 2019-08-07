@@ -28,7 +28,7 @@ export default function (state = initialState, action){
         case GET_FAQ:
             return {
                 ...state,
-                post: payload,
+                faq: payload,
                 loading: false
             };
         case ADD_FAQ:
