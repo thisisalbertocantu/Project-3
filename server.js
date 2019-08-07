@@ -29,5 +29,11 @@ app.use('/api/profile', profileRoute);
 app.use('/api/posts', postsRoute);
 app.use('/api/faqs', faqRoute);
 
+// Serve static assets in production
+if (procces.env.NODE_ENV ==='production'){
+    // Set static folder
+    app.use(express.static('client/build'));
+}
+
 // Start listening on port
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://jo666:Satan666@faqs-qqgjq.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "82ad9e02f169e49d8a05",
+  "githubSecret": "d295288ff2fcc896b746da3f8580ccf4d6fdf302"
+}
