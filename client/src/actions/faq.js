@@ -43,19 +43,20 @@ export const getFaq = id => async dispatch => {
 };
 
 // Add faq
-export const addFaq = formData => async dispatch => {
+export const addFaq = (formData, history) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
         }
     };
     try {
-        const res = await axios.post(`/api/posts`, formData, config);
+        const res = await axios.post(`/api/faqs`, formData, config);
         dispatch({
             type: ADD_FAQ,
             payload: res.data
         });
-        dispatch(setAlert('FAQ Created', 'success'))
+        dispatch(setAlert('FAQ Created', 'success'));
+        history.push('/faqs');
     }catch (e) {
         dispatch({
             type: FAQ_ERROR,
@@ -123,6 +124,7 @@ export const deleteComment = (faqId, commentId) => async dispatch => {
 // Add like
 export const addLike = id => async dispatch => {
     try {
+        console.log('addlike')
         const res  = await axios.put(`/api/faqs/like/${id}`);
         dispatch({
             type: UPDATE_LIKES,

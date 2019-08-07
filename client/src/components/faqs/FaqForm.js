@@ -7,7 +7,7 @@ import {addFaq} from "../../actions/faq";
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-const FaqForm = (addFaq) => {
+const FaqForm = ({addFaq, history}) => {
     const [formData, setFormData] = useState({
         title: '',
         answer: '',
@@ -22,7 +22,8 @@ const FaqForm = (addFaq) => {
     const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
     const onSubmit = e => {
         e.preventDefault();
-        addFaq(formData);
+        console.log(formData);
+        addFaq(formData, history);
     };
     return (
         <Fragment>
@@ -53,24 +54,28 @@ const FaqForm = (addFaq) => {
                     </small
                     >
                 </div>
-                <CKEditor
-                    editor={ ClassicEditor }
-                    data="asdfañlskfdjañsdfa"
-                    onInit={ editor => {
-                        // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
-                    } }
-                    onChange={ ( event, editor ) => {
-                        const data = editor.getData();
-                        console.log( { event, editor, data } );
-                    } }
-                    onBlur={ editor => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ editor => {
-                        console.log( 'Focus.', editor );
-                    } }
-                />
+                <div className="form-group">
+                    <CKEditor
+                        editor={ ClassicEditor }
+                        value={answer}
+                        data=""
+                        onInit={ editor => {
+                            // You can store the "editor" and use when it is needed.
+                            console.log( 'Editor is ready to use!', editor );
+                        } }
+                        onChange={ ( event, editor ) => {
+                            const data = editor.getData();
+                            setFormData({...formData, ['answer']: data})
+                        } }
+                        onBlur={ editor => {
+
+                        } }
+                        onFocus={ editor => {
+
+                        } }
+                    />
+                </div>
+
                 <input type="submit" className="btn btn-primary my-1"/>
                 <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
             </form>
@@ -82,9 +87,6 @@ FaqForm.propTypes = {
     addFaq: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => ({
-
-});
 export default connect(null, {addFaq})(FaqForm);
 
 
