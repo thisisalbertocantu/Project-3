@@ -43,7 +43,7 @@ export const getFaq = id => async dispatch => {
 };
 
 // Add faq
-export const addFaq = formData => async dispatch => {
+export const addFaq = (formData, history) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
@@ -55,7 +55,8 @@ export const addFaq = formData => async dispatch => {
             type: ADD_FAQ,
             payload: res.data
         });
-        dispatch(setAlert('FAQ Created', 'success'))
+        dispatch(setAlert('FAQ Created', 'success'));
+        history.push('/faqs');
     }catch (e) {
         dispatch({
             type: FAQ_ERROR,

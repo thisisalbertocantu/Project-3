@@ -13,8 +13,8 @@ const FaqItem = ({
     deleteFaq,
     showActions
 }) =>
-    <div className="post bg-white p-1 my-1">
-        <div>
+    <div className="post bg-white py-1 my-1">
+        <div >
             <Link to={`/faqs/${_id}`}>
                 {title}
             </Link>

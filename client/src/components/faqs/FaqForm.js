@@ -7,7 +7,7 @@ import {addFaq} from "../../actions/faq";
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-const FaqForm = ({addFaq}) => {
+const FaqForm = ({addFaq, history}) => {
     const [formData, setFormData] = useState({
         title: '',
         answer: '',
@@ -23,7 +23,7 @@ const FaqForm = ({addFaq}) => {
     const onSubmit = e => {
         e.preventDefault();
         console.log(formData);
-        addFaq(formData);
+        addFaq(formData, history);
     };
     return (
         <Fragment>
@@ -58,14 +58,14 @@ const FaqForm = ({addFaq}) => {
                     <CKEditor
                         editor={ ClassicEditor }
                         value={answer}
-                        data="asdfañlskfdjañsdfa"
+                        data=""
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.
                             console.log( 'Editor is ready to use!', editor );
                         } }
                         onChange={ ( event, editor ) => {
                             const data = editor.getData();
-                            console.log(data);
+                            setFormData({...formData, ['answer']: data})
                         } }
                         onBlur={ editor => {
 
