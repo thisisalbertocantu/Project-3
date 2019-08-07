@@ -16,6 +16,7 @@ import Post from "../post/Post";
 import FaqForm from "../faqs/FaqForm";
 import Home from "../main/Home";
 import Faqs from "../faqs/Faqs";
+import Faq from "../faq/Faq";
 import NotFound from "../layout/NotFound";
 
 const Routes = () => {
@@ -35,6 +36,7 @@ const Routes = () => {
                 <PrivateRoute exact path='/add-education' component={AddEducation}/>
                 <PrivateRoute exact path='/posts' component={Posts}/>
                 <PrivateRoute exact path='/faqs' component={Faqs}/>
+                <PrivateRoute exact path='/faqs/:id' component={Faq}/>
                 <PrivateRoute exact path='/posts/:id' component={Post}/>
                 <PrivateRoute exact path='/faq-form' component={FaqForm}/>
                 <Route component={NotFound}/>

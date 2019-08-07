@@ -29,7 +29,7 @@ export const getFaqs = () => async dispatch => {
 // Get faq
 export const getFaq = id => async dispatch => {
     try {
-        const res = await axios.post(`/api/faqs/${id}`);
+        const res = await axios.get(`/api/faqs/${id}`);
         dispatch({
             type: GET_FAQ,
             payload: res.data
@@ -107,13 +107,14 @@ export const addComment = (faqId, formData) => async dispatch => {
 // Delete comment
 export const deleteComment = (faqId, commentId) => async dispatch => {
     try {
-        const res = await axios.delete(`/api/faqs/comment/${faqId}/${commentId}`);
+        await axios.delete(`/api/faqs/comment/${faqId}/${commentId}`);
         dispatch({
             type: REMOVE_COMMENT,
             payload: commentId
         });
         dispatch(setAlert('Comment Removed', 'success'))
     }catch (e) {
+        console.log(e);
         dispatch({
             type: FAQ_ERROR,
             payload: {msg: e.response.statusText, status: e.response.status}

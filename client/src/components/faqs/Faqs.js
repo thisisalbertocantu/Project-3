@@ -16,7 +16,6 @@ const Faqs = ({getFaqs, faq:{faqs, loading}}) => {
         <p className="lead">
             <i className="fas fa-user"></i> Welcome to the community of faqs
         </p>
-
         <Link  to='/faq-form' className="btn btn-light">
             Add FAQ
         </Link>

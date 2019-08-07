@@ -11,49 +11,57 @@ const FaqItem = ({
     addLike,
     removeLike,
     deleteFaq,
-    showActions
+    showActions,
+    showAnswers
 }) =>
-    <div className="post bg-white py-1 my-1">
-        <div >
-            <Link to={`/faqs/${_id}`}>
-                {title}
-            </Link>
-        </div>
-        <div>
-            <p className="post-date">
-                Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
-            </p>
-            {showActions && <Fragment>
-                <button onClick={e => addLike(_id)} type="button" className="btn btn-light">
-                    <i className="fas fa-thumbs-up"></i> {' '}
-                    <span>{likes.length > 0 && (
-                        <span>{likes.length}</span>
-                    )}</span>
-                </button>
-                <button onClick={e => removeLike(_id)} type="button" className="btn btn-light">
-                    <i className="fas fa-thumbs-down"></i>
-                </button>
-                <Link to={`/faqs/${_id}`} className="btn btn-primary">
-                    Discussion {' '}
-                    {comments.length > 0 && (
-                        <span className='comment-count'>{comments.length}</span>
-                    )}
+    <Fragment>
+        <div className="post bg-white py-1 my-1">
+            <div >
+                <Link to={`/faqs/${_id}`}>
+                    {title}
                 </Link>
-                {!auth.loading && user === auth.user._id && (
-                    <button
-                        type="button"
-                        className="btn btn-danger"
-                        onClick={e => deleteFaq(_id)}
-                    >
-                        <i className="fas fa-times"></i>
+            </div>
+            <div>
+                <p className="post-date">
+                    Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
+                </p>
+                {showActions && <Fragment>
+                    <button onClick={e => addLike(_id)} type="button" className="btn btn-light">
+                        <i className="fas fa-thumbs-up"></i> {' '}
+                        <span>{likes.length > 0 && (
+                            <span>{likes.length}</span>
+                        )}</span>
                     </button>
-                )}
-            </Fragment>}
+                    <button onClick={e => removeLike(_id)} type="button" className="btn btn-light">
+                        <i className="fas fa-thumbs-down"></i>
+                    </button>
+                    <Link to={`/faqs/${_id}`} className="btn btn-primary">
+                        Discussion {' '}
+                        {comments.length > 0 && (
+                            <span className='comment-count'>{comments.length}</span>
+                        )}
+                    </Link>
+                    {!auth.loading && user === auth.user._id && (
+                        <button
+                            type="button"
+                            className="btn btn-danger"
+                            onClick={e => deleteFaq(_id)}
+                        >
+                            <i className="fas fa-times"></i>
+                        </button>
+                    )}
+                </Fragment>}
+                {showAnswers && <Fragment>
+                    {answer}
+                </Fragment>}
+            </div>
         </div>
-    </div>;
+    </Fragment>;
+
 
 FaqItem.defaultProps = {
-    showActions: true
+    showActions: true,
+    showAnswers: false
 };
 
 FaqItem.propTypes = {
