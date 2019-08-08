@@ -67,7 +67,7 @@ export default function (state = initialState, action){
             return {
                 ...state,
                 faq: {...state.faq,
-                comment: state.faq.comment.filter(comment => comment._id !== payload)
+                comment: state.faq.comments.filter(comment => comment._id !== payload)
                 },
                 loading: false
             };

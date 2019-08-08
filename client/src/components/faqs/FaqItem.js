@@ -51,9 +51,7 @@ const FaqItem = ({
                         </button>
                     )}
                 </Fragment>}
-                {showAnswers && <Fragment>
-                    {answer}
-                </Fragment>}
+                {showAnswers && <div dangerouslySetInnerHTML={{__html: answer}}></div>}
             </div>
         </div>
     </Fragment>;
