@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
 import {addFaq} from "../../actions/faq";
 
-
+import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const FaqForm = ({addFaq, history}) => {
@@ -55,7 +55,7 @@ const FaqForm = ({addFaq, history}) => {
                     >
                 </div>
                 <div className="form-group">
-                    <ClassicEditor
+                    <CKEditor
                         editor={ ClassicEditor }
                         value={answer}
                         data=""
